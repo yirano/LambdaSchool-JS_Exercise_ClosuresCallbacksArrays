@@ -287,8 +287,8 @@ function tallyUpDonations(runners) {
 //     return counter;
 //   };
 // })();
-var counterMaker = function() {
-  var count = 0;
+const counterMaker = () => {
+  let count = -1;
   return function() {
     ++count;
     return count;
