@@ -15,7 +15,7 @@
  * should return 'foofoo'.
  */
 function processFirstItem(stringList, callback) {
-  return callback(stringList[0]);
+	return callback(stringList[0]);
 }
 
 // ⭐️ Example Challenge END ⭐️
@@ -48,9 +48,9 @@ function processFirstItem(stringList, callback) {
  * should return "There are 0".
  */
 function processLength(list, callback) {
-  /* CODE HERE */
-  let len = list.length;
-  return callback(len);
+	/* CODE HERE */
+	let len = list.length;
+	return callback(len);
 }
 
 /**
@@ -68,9 +68,9 @@ function processLength(list, callback) {
  * should return 'barbar'.
  */
 function processLastItem(stringList, callback) {
-  /* CODE HERE */
-  let last = stringList[stringList.length - 1];
-  return callback(last);
+	/* CODE HERE */
+	let last = stringList[stringList.length - 1];
+	return callback(last);
 }
 
 /**
@@ -91,11 +91,11 @@ function processLastItem(stringList, callback) {
  * should return 1000.
  */
 function processSum(numberList, callback) {
-  /* CODE HERE */
-  let ans = numberList.reduce((a, b) => {
-    return a + b;
-  }, 0);
-  return callback(ans);
+	/* CODE HERE */
+	let ans = numberList.reduce((a, b) => {
+		return a + b;
+	}, 0);
+	return callback(ans);
 }
 
 /**
@@ -117,9 +117,9 @@ function processSum(numberList, callback) {
  * should return 1000.
  */
 function processProduct(num1, num2, callback) {
-  /* CODE HERE */
-  let prod = num1 * num2;
-  return callback(prod);
+	/* CODE HERE */
+	let prod = num1 * num2;
+	return callback(prod);
 }
 
 /**
@@ -143,12 +143,12 @@ function processProduct(num1, num2, callback) {
  * should return "sad".
  */
 function processContains(item, list, callback) {
-  let holder =
-    list.filter(x => {
-      return x == item;
-    }).length > 0;
+	let holder =
+		list.filter((x) => {
+			return x == item;
+		}).length > 0;
 
-  return callback(holder);
+	return callback(holder);
 }
 
 /**
@@ -171,7 +171,7 @@ function processContains(item, list, callback) {
  * should return 3.
  */
 function processDuplicateFree(list, callback) {
-  /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+	/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
@@ -193,13 +193,13 @@ function processDuplicateFree(list, callback) {
  * The full names appear in the array in the same order the runners appear in the `runners` array.
  */
 function getFullNames(runners) {
-  /* CODE HERE */
-  let names = [];
-  runners.map(x => {
-    names.push(`${x.last_name}, ${x.first_name}`);
-  });
+	/* CODE HERE */
+	let names = [];
+	runners.map((x) => {
+		names.push(`${x.last_name}, ${x.first_name}`);
+	});
 
-  return names;
+	return names;
 }
 
 /**
@@ -215,12 +215,12 @@ function getFullNames(runners) {
  * The first names appear in the array in the same order the runners appear in the `runners` array.
  */
 function firstNamesAllCaps(runners) {
-  let names = [];
-  runners.forEach(x => {
-    names.push(`${x.first_name.toUpperCase()}`);
-  });
+	let names = [];
+	runners.forEach((x) => {
+		names.push(`${x.first_name.toUpperCase()}`);
+	});
 
-  return names;
+	return names;
 }
 
 /**
@@ -237,13 +237,13 @@ function firstNamesAllCaps(runners) {
  * The runners in the array appear in the same order they appear in the `runners` array.
  */
 function getRunnersByTShirtSize(runners, tShirtSize) {
-  /* CODE HERE */
-  let size = [];
-  runners.map(x => {
-    x.shirt_size == tShirtSize ? size.push(x) : null;
-  });
+	/* CODE HERE */
+	let size = [];
+	runners.map((x) => {
+		x.shirt_size == tShirtSize ? size.push(x) : null;
+	});
 
-  return size;
+	return size;
 }
 
 /**
@@ -257,10 +257,10 @@ function getRunnersByTShirtSize(runners, tShirtSize) {
  * @returns a number which is the sum of the donations by all runners.
  */
 function tallyUpDonations(runners) {
-  /* CODE HERE */
-  return runners.reduce((a, b) => {
-    return a + b.donation;
-  }, 0);
+	/* CODE HERE */
+	return runners.reduce((a, b) => {
+		return a + b.donation;
+	}, 0);
 }
 
 /////////////// CLOSURES ///////////////
@@ -288,12 +288,12 @@ function tallyUpDonations(runners) {
 //   };
 // })();
 const counterMaker = () => {
-  let count = -1;
-  return function() {
-    ++count;
-    return count;
-  };
-  // BROKEN CODE ENDS
+	let count = -1;
+	return function() {
+		++count;
+		return count;
+	};
+	// BROKEN CODE ENDS
 };
 
 /**
@@ -317,54 +317,54 @@ const counterMaker = () => {
  * etc
  */
 function counterMakerWithLimit(/* CODE HERE */) {
-  /* CODE HERE */
+	/* CODE HERE */
 }
 
 /////////////// END OF CHALLENGE ///////////////
 /////////////// END OF CHALLENGE ///////////////
 /////////////// END OF CHALLENGE ///////////////
 
-if (typeof exports !== "undefined") {
-  // IGNORE: Test/Env Detected
-  // For Node/Non-browser test env
-  module.exports = module.exports || {};
-  if (processFirstItem) {
-    module.exports.processFirstItem = processFirstItem;
-  }
-  if (processLength) {
-    module.exports.processLength = processLength;
-  }
-  if (processLastItem) {
-    module.exports.processLastItem = processLastItem;
-  }
-  if (processSum) {
-    module.exports.processSum = processSum;
-  }
-  if (processProduct) {
-    module.exports.processProduct = processProduct;
-  }
-  if (processContains) {
-    module.exports.processContains = processContains;
-  }
-  if (processDuplicateFree) {
-    module.exports.processDuplicateFree = processDuplicateFree;
-  }
-  if (getFullNames) {
-    module.exports.getFullNames = getFullNames;
-  }
-  if (firstNamesAllCaps) {
-    module.exports.firstNamesAllCaps = firstNamesAllCaps;
-  }
-  if (getRunnersByTShirtSize) {
-    module.exports.getRunnersByTShirtSize = getRunnersByTShirtSize;
-  }
-  if (tallyUpDonations) {
-    module.exports.tallyUpDonations = tallyUpDonations;
-  }
-  if (counterMaker) {
-    module.exports.counterMaker = counterMaker;
-  }
-  if (counterMakerWithLimit) {
-    module.exports.counterMakerWithLimit = counterMakerWithLimit;
-  }
+if (typeof exports !== 'undefined') {
+	// IGNORE: Test/Env Detected
+	// For Node/Non-browser test env
+	module.exports = module.exports || {};
+	if (processFirstItem) {
+		module.exports.processFirstItem = processFirstItem;
+	}
+	if (processLength) {
+		module.exports.processLength = processLength;
+	}
+	if (processLastItem) {
+		module.exports.processLastItem = processLastItem;
+	}
+	if (processSum) {
+		module.exports.processSum = processSum;
+	}
+	if (processProduct) {
+		module.exports.processProduct = processProduct;
+	}
+	if (processContains) {
+		module.exports.processContains = processContains;
+	}
+	if (processDuplicateFree) {
+		module.exports.processDuplicateFree = processDuplicateFree;
+	}
+	if (getFullNames) {
+		module.exports.getFullNames = getFullNames;
+	}
+	if (firstNamesAllCaps) {
+		module.exports.firstNamesAllCaps = firstNamesAllCaps;
+	}
+	if (getRunnersByTShirtSize) {
+		module.exports.getRunnersByTShirtSize = getRunnersByTShirtSize;
+	}
+	if (tallyUpDonations) {
+		module.exports.tallyUpDonations = tallyUpDonations;
+	}
+	if (counterMaker) {
+		module.exports.counterMaker = counterMaker;
+	}
+	if (counterMakerWithLimit) {
+		module.exports.counterMakerWithLimit = counterMakerWithLimit;
+	}
 }
