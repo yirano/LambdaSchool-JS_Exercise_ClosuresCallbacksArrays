@@ -141,7 +141,7 @@ function processProduct(num1, num2, callback) {
  * [2] Invoking `processContains` passing
  * "lady gaga" and `['foo', 'bar']` and `(bool) => bool ? 'nice!' : 'sad'`,
  * should return "sad".
- */
+*/
 function processContains(item, list, callback) {
 	let holder =
 		list.filter((x) => {
