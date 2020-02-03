@@ -279,14 +279,22 @@ function tallyUpDonations(runners) {
  * counter() // should return 2
  * etc
  */
-function counterMaker() {
-  // BROKEN CODE STARTS
-  const count = 0;
-  function counter() {
+
+// var add = (function() {
+//   var counter = 0;
+//   return function() {
+//     counter += 1;
+//     return counter;
+//   };
+// })();
+var counterMaker = function() {
+  var count = 0;
+  return function() {
     ++count;
-  }
+    return count;
+  };
   // BROKEN CODE ENDS
-}
+};
 
 /**
  * ### Challenge `counterMakerWithLimit`
