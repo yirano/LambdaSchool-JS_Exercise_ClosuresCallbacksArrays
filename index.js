@@ -171,7 +171,13 @@ function processContains(item, list, callback) {
  * should return 3.
  */
 function processDuplicateFree(list, callback) {
-	/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+	let arr = [];
+	let ct = 0;
+	list.map((x) => {
+		!arr.includes(x) ? arr.push(x) : null;
+	});
+
+	return callback(arr);
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
@@ -287,14 +293,13 @@ function tallyUpDonations(runners) {
 //     return counter;
 //   };
 // })();
-const counterMaker = () => {
-	let count = -1;
+function counterMaker() {
+	let count = 0;
 	return function() {
-		++count;
-		return count;
+		return count++;
 	};
 	// BROKEN CODE ENDS
-};
+}
 
 /**
  * ### Challenge `counterMakerWithLimit`
@@ -316,8 +321,16 @@ const counterMaker = () => {
  * counter() // should return 0
  * etc
  */
-function counterMakerWithLimit(/* CODE HERE */) {
-	/* CODE HERE */
+function counterMakerWithLimit(max) {
+	let ct = 0;
+	return function() {
+		if (ct <= max) {
+			return ct++;
+		} else {
+			ct = 0;
+			return ct++;
+		}
+	};
 }
 
 /////////////// END OF CHALLENGE ///////////////
