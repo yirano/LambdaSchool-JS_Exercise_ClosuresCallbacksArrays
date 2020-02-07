@@ -172,11 +172,12 @@ function processContains(item, list, callback) {
  */
 function processDuplicateFree(list, callback) {
 	let arr = [];
-	let ct = 0;
-	list.map((x) => {
-		!arr.includes(x) ? arr.push(x) : null;
-	});
-
+	// list.map((x) => {
+	// 	!arr.includes(x) ? arr.push(x) : null;
+	// });
+	for (let i = 0; i < list.length; i++) {
+		!arr.includes(list[i]) ? arr.push(list[i]) : null;
+	}
 	return callback(arr);
 }
 
@@ -201,7 +202,7 @@ function processDuplicateFree(list, callback) {
 function getFullNames(runners) {
 	/* CODE HERE */
 	let names = [];
-	runners.map((x) => {
+	runners.forEach((x) => {
 		names.push(`${x.last_name}, ${x.first_name}`);
 	});
 
@@ -222,7 +223,7 @@ function getFullNames(runners) {
  */
 function firstNamesAllCaps(runners) {
 	let names = [];
-	runners.forEach((x) => {
+	runners.map((x) => {
 		names.push(`${x.first_name.toUpperCase()}`);
 	});
 
@@ -244,12 +245,9 @@ function firstNamesAllCaps(runners) {
  */
 function getRunnersByTShirtSize(runners, tShirtSize) {
 	/* CODE HERE */
-	let size = [];
-	runners.map((x) => {
-		x.shirt_size == tShirtSize ? size.push(x) : null;
+	return runners.filter((x) => {
+		return x.shirt_size == tShirtSize;
 	});
-
-	return size;
 }
 
 /**
