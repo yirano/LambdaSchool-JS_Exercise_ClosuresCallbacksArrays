@@ -141,7 +141,7 @@ function processProduct(num1, num2, callback) {
  * [2] Invoking `processContains` passing
  * "lady gaga" and `['foo', 'bar']` and `(bool) => bool ? 'nice!' : 'sad'`,
  * should return "sad".
-*/
+ */
 function processContains(item, list, callback) {
 	let holder =
 		list.filter((x) => {
@@ -172,12 +172,11 @@ function processContains(item, list, callback) {
  */
 function processDuplicateFree(list, callback) {
 	let arr = [];
-	// list.map((x) => {
-	// 	!arr.includes(x) ? arr.push(x) : null;
-	// });
-	for (let i = 0; i < list.length; i++) {
-		!arr.includes(list[i]) ? arr.push(list[i]) : null;
-	}
+	let ct = 0;
+	list.map((x) => {
+		!arr.includes(x) ? arr.push(x) : null;
+	});
+
 	return callback(arr);
 }
 
